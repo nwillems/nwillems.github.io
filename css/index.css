@@ -165,7 +165,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#375b85', end
     height: 45%;
 }
 #scene_shelter {
-    height: 100%;
+    height: 110%;
     z-index: 50;
 }
 
