@@ -9,10 +9,10 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 <body>
-<div id="scroll-status"
+<!-- <div id="scroll-status"
     style="position:fixed;z-index:9001;top:0px;left:0px;color:pink;">
     1x1
-</div>
+    </div> -->
 <div id="skrollr-body">
     <div id="skies">
         <div id="intro">
@@ -214,10 +214,10 @@ function init_dialogs(){
 
 var ss = undefined;
 function init_skrollr(){
-    var stat = document.querySelector("#scroll-status")
+    // var stat = document.querySelector("#scroll-status")
     function logger(data){
         console.log(data);
-        stat.innerHTML = data.curTop;
+        // stat.innerHTML = data.curTop;
     }
 
     ss = skrollr.init({ 
