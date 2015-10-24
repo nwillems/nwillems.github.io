@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Winning case for Business Hack 2015</title>
+
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    -->
+    <style>
+body { padding-top: 50px; }
+.progress-lg { height: 30px; }
+.metric-name { display: inline; }
+.metric-header { margin-bottom: 10px; }
+.metric-minmax { display: none !important;  }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" aria-expanded="false"
+                        data-target="#nav-search" data-toggle="collapse"
+                        type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Winner of
+                    BusinessHack15</a>
+            </div>
+            <div id="nav-search" class="navbar-collapse collapse">
+                <form id="cvr-search" class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input class="form-control" id="cvr-nr"
+                               type="text" 
+                               placeholder="CVR-nr" />
+                    </div>
+                    <button class="btn btn-default" type="submit">Søg</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 id="company-name">Virksomhedens navn</h1>
+            </div>
+        </div>
+
+        <div class="row" id="invest"><div class="col-xs-12">
+            <div class="row metric-header">
+                <div class="col-xs-10">
+                    <h4 class="metric-name">Invest</h4>
+                    <button type="button" class="btn btn-link btn-sm" 
+                            data-toggle="popover"
+                            data-trigger="focus"
+                            title="Investering">
+                        ?
+                    </button>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+            <div class="row metric-value"><div class="col-xs-12">
+                <div class="row metric-minmax">
+                    <div class="col-sm-2">75%</div>
+                    <div class="col-sm-2 col-sm-offset-8 text-right">300%</div>
+                </div>
+                <div class="row metric-progress">
+                    <div class="col-xs-12" id="invest-value">
+                        <div class="progress progress-lg">
+                            <div class="progress-bar"
+                                aria-valuemin="75" aria-valuemax="300" aria-valuenow="99"
+                                style="width: 0%;">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div></div>
+
+        <div class="row" id="credit"><div class="col-xs-12">
+            <div class="row metric-header">
+                <div class="col-xs-10">
+                    <h4 class="metric-name">Kredit</h4>
+                    <button type="button" class="btn  btn-link btn-sm" 
+                            data-toggle="popover"
+                            data-trigger="focus"
+                            title="Kredit">
+                        ?
+                    </button>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+            <div class="row metric-value"><div class="col-xs-12">
+                <div class="row metric-minmax hidden-xs">
+                    <div class="col-sm-2">15%</div>
+                    <div class="col-sm-2 col-sm-offset-8 text-right">30%</div>
+                </div>
+                <div class="row metric-progress">
+                    <div class="col-xs-12" id="credit-value">
+                        <div class="progress progress-lg">
+                            <div class="progress-bar progress-bar-success"
+                                aria-valuemin="15" aria-valuemax="30" aria-valuenow="25"
+                                style="width: 0%;">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div></div>
+
+        <div class="row" id="pension"><div class="col-xs-12">
+            <div class="row metric-header">
+                <div class="col-xs-10">
+                    <h4 class="metric-name">Pension</h4>
+                    <button type="button" class="btn  btn-link btn-sm" 
+                            data-toggle="popover"
+                            data-trigger="focus"
+                            title="Pension">
+                        ?
+                    </button>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+            <div class="row metric-value"><div class="col-xs-12">
+                <div class="row metric-minmax hidden-xs">
+                    <div class="col-sm-2">
+                        5 <span class="glyphicon glyphicon-user"></span> 
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-8 text-right">
+                        1000 
+                    </div>
+                </div>
+                <div class="row metric-progress">
+                    <div class="col-xs-12" id="pension-value">
+                        <div class="progress progress-lg">
+                            <div class="progress-bar progress-bar-warning"
+                                aria-valuemin="5" aria-valuemax="1000" aria-valuenow="30"
+                                style="width: 0%;">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div></div>
+
+        <div class="row" id="leasing"><div class="col-xs-12">
+            <div class="row metric-header">
+                <div class="col-xs-10">
+                    <h4 class="metric-name">Leasing</h4>
+                    <button type="button" class="btn  btn-link btn-sm" 
+                            data-toggle="popover"
+                            data-trigger="focus"
+                            title="Leasing">
+                        ?
+                    </button>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+            <div class="row metric-value"><div class="col-xs-12">
+                <div class="row metric-minmax hidden-xs">
+                    <div class="col-sm-2">
+                        100k <span class="glyphicon glyphicon-usd"></span>
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-8 text-right">5M</div>
+                </div>
+                <div class="row metric-progress">
+                    <div class="col-xs-12" id="leasing-value">
+                        <div class="progress progress-lg">
+                            <div class="progress-bar progress-bar-success"
+                                aria-valuemin="1" aria-valuemax="50"
+                                                  aria-valuenow="0"
+                                style="width: 0%;">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div></div>
+
+        <div class="row" id="shares"><div class="col-xs-12">
+            <div class="row metric-header">
+                <div class="col-xs-12">
+                    <div class="row">
+                <div class="col-xs-8">
+                    <h4 class="metric-name">Aktie investering</h4>
+                    <button type="button" class="btn  btn-link btn-sm" 
+                            data-toggle="popover"
+                            data-trigger="focus"
+                            title="Aktie investering">
+                        ?
+                    </button>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col-xs-4">
+                    Aktuel for branche: 
+                    <button class="btn btn-xs btn-success">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row metric-value"><div class="col-xs-12">
+                <div class="row metric-minmax hidden-xs">
+                    <div class="col-sm-2">Min</div>
+                    <div class="col-sm-2 col-sm-offset-8 text-right">Max</div>
+                </div>
+                <div class="row metric-progress">
+                    <div class="col-xs-12" id="shares-value">
+                        <div class="progress progress-lg">
+                            <div class="progress-bar" 
+                                aria-valuemin="0" aria-valuemax="15" aria-valuenow="1"
+                                style="width: 0%;">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+    var data = {
+        "equityRatioScore"  : {
+            "score" : 10,
+            "description" : "Udregnet på grundlag af",
+            "values" : [ 
+                {"Name" : "Val1", "Value" : 10},
+                {"Name" : "Val1", "Value" : 10}
+            ]
+        }
+        , "pension" : {
+            "score" : 3
+        }
+        , "leasing" : {
+            "score" : 0
+        }
+        , "credit"  : {
+            "score" : 66
+        }
+        , "shares"  : {
+            "score" : 6
+        }
+    };
+    var data2 = {
+        "Invest" : {
+            "Score" : 500,
+            "Description" : "Udregnet på grundlag af",
+            "Values" : [ 
+                {"Name" : "Val1", "Value" : 10},
+                {"Name" : "Val1", "Value" : 10}
+            ]
+        }
+    };
+</script>
+
+<script>
+
+var POPOVER_DATAKEY = "values";
+
+function updateData(cvrNr){
+    $('#invest-value .progress-bar').width('0%');
+    $('#pension-value .progress-bar').width('0%');
+    $('#leasing-value .progress-bar').width('0%');
+    $('#credit-value .progress-bar').width('0%');
+    $('#shares-value .progress-bar').width('0%');
+
+    var url = "foo.json?cvr=" + cvrNr;
+    $.getJSON(url, function(dat){
+        setTimeout(function(){
+        jQuery.data($('#invest [data-toggle="popover"]')[0], 
+                POPOVER_DATAKEY, data.equityRatioScore);
+        $('#invest-value .progress-bar').width(data.equityRatioScore.score +'%');
+        
+        jQuery.data($('#pension [data-toggle="popover"]')[0], 
+                POPOVER_DATAKEY, data.pension);
+        $('#pension-value .progress-bar').width(data.pension.score + '%');
+        
+        jQuery.data($('#leasing [data-toggle="popover"]')[0], 
+                POPOVER_DATAKEY, data.leasing);
+        $('#leasing-value .progress-bar').width(data.leasing.score + '%');
+        
+        jQuery.data($('#credit [data-toggle="popover"]')[0], 
+                POPOVER_DATAKEY, data.credit);
+        $('#credit-value .progress-bar').width(data.credit.score + '%');
+        
+        jQuery.data($('#shares [data-toggle="popover"]')[0], 
+                POPOVER_DATAKEY, data.shares);
+        $('#shares-value .progress-bar').width(data.shares.score + '%');
+        }, 100);
+    });
+}
+
+function showHelp(){
+    console.log(arguments);
+    console.log(jQuery.data(this, POPOVER_DATAKEY));
+    var cnt = jQuery.data(this, POPOVER_DATAKEY);
+    if(cnt.description)
+        return cnt.description;
+    return "N/A";
+}
+
+$(document).ready(function(){
+    $('#cvr-search').on('submit', function(ev){
+        var value = $('#cvr-nr').val().substring(1);
+        updateData(value);
+        window.location.hash = value;
+        ev.preventDefault();
+    });
+
+    var value = window.location.hash.substring(1);
+    if(value){
+        // Preload from hash
+        updateData(value);
+    }
+
+    $('[data-toggle="popover"]').popover({ 
+        'html': true,
+        'content': showHelp 
+    });
+});
+
+</script>
+
+</body>
+<!--
+        <div class="row"><div class="col-xs-12">
+            <div class="row metric-header">
+                <div class="col-xs-10">
+                    <h4>Metric Name</h4>
+                </div>
+                <div class="col-xs-2">
+                    Branchekode: 
+                    <button class="btn btn-success">
+                        <span class="glyphicon glyphicon-off"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="row metric-value"><div class="col-xs-12">
+                <div class="row metric-minmax hidden-xs">
+                    <div class="col-sm-2">Min</div>
+                    <div class="col-sm-2 col-sm-offset-8 text-right">Max</div>
+                </div>
+                <div class="row metric-progress">
+                    <div class="col-xs-12">
+                        <div class="progress progress-lg">
+                            <div class="progress-bar" 
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                                style="width: 50%;">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </div>
+        </div></div>
+-->
+</html>
