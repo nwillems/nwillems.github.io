@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+    body {
+        margin: 10px 10%;
+    }
+    .sound-thing {
+        background: #fff;
+        padding: 5px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px #000;
+        width: 40%;
+        float: left;
+        margin: 10px;
+        text-align: center;
+    }
+    .sound-thing audio { width: 100%; }
+</style>
+</head>
+<body>
+    
+    <!--
+    <div class="sound-thing">
+        <p>Scratch</p>
+        <audio controls src="sounds/scratch.mp3" preload="metadata"> 
+    </div>
+    -->
+<script>
+var sounds = [
+    { "name": "scratch", "src": "sounds/scratch.mp3" }
+    , { "name": "klokke", "src": "sounds/townhall_bell.mp3" }
+    , { "name": "S-tog", "src": "sounds/stog.mp3" }
+    , { "name": "Cello", "src": "sounds/cello.mp3" }
+    , { "name": "Saxofon", "src": "sounds/saxophone.ogg" }
+]
+
+function createSoundThing(title, src){
+    var containerDiv = document.createElement("div");
+    containerDiv.classList.add("sound-thing");
+
+    containerDiv.innerHTML = "<p>"+title+"</p>" +
+        '<audio controls preload="metadata" src="' + src + '" />';
+
+    return containerDiv;
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var container = document.body;
+
+    sounds.forEach(function(elm){
+        var name = elm["name"],
+            src = elm["src"];
+
+        var soundThing = createSoundThing(name, src);
+        container.appendChild(soundThing);
+    });
+
+});
+
+</script>
+</body>
+</html>
