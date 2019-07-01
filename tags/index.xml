@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nicolai Willems</title>
-    <link>http://nwillems.dk/tags/</link>
+    <link>https://nwillems.dk/tags/</link>
     <description>Recent content in Tags on Nicolai Willems</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Creative Commons Attribution-ShareAlike</copyright>
     
-	<atom:link href="http://nwillems.dk/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nwillems.dk/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
