@@ -5,16 +5,20 @@
 --circumfrence: calc(6.283185307 * var(--radius));
 --sliceHeight: calc(var(--circumfrence) / var(--numberOfSlices));
 --sliceOffeset: calc(var(--sliceHeight) / 2);
---sliceColor: #095B8D;
---sliceColorDark: #042d47;
+--sliceColor: #5d815b;
+--sliceColorDark: #953332;
 --rotation: calc(360deg / var(--numberOfSlices));
 
+--ext1: #bda686; /* crumb cake */
+--ext2: #896f4e; /* soft suede */
+--ext3: #584839; /* early espresso */
+--ext4: #fefbe8; /* very vanilla */
 }
 
 body {
 	font-family: sans-serif;
 	margin: 0;
-	background: #F6F7F9;
+	background: #Fff;
 }
 
 .container {
@@ -24,8 +28,8 @@ body {
 }
 
 .spinner-table {
-	height: (var(--diameter) - 2px);
-	width: (var(--diameter) - 2px);
+	height: calc(var(--diameter) - 2px);
+	width: calc(var(--diameter) - 2px);
 	position: relative;
 	border-radius: 100%;
 	overflow: hidden;
@@ -53,7 +57,7 @@ body {
   position: absolute;
   height: 40px;
   width: 40px;
-  background: white;
+  background: var(--ext4);
   box-shadow: 0 0 5px 5px rgba(#000, .1);
   top: 50%;
   left: 50%;
@@ -70,7 +74,7 @@ body {
   height: var(--sliceHeight);
   left: 50%;
   width: 50%;
-  color: white;
+  color: var(--ext4);
   text-align: right;
   padding-right: 10px;
   display: block;
@@ -197,7 +201,7 @@ body {
   height: 0;
   border-style: solid;
   border-width: 0 0 15px 50px;
-  border-color: transparent transparent #c27028 transparent;
+  border-color: transparent transparent var(--ext1) transparent;
 }
 
 .pointer:after {
@@ -210,20 +214,20 @@ body {
   height: 0;
   border-style: solid;
   border-width: 0 50px 15px 0;
-  border-color: transparent #c27028 transparent transparent;
+  border-color: transparent var(--ext1) transparent transparent;
 }
 
 .board {
 	position: relative;
-	background: white;
+	background: var(--ext4);
 	padding: 50px;
 }
 
 button {
-	background: #c27028;
+	background: var(--ext1);
 	border: 0;
 	padding: 15px 50px;
-	color: white;
+	color: var(--ext4);
 	position: absolute;
 	top: 50%;
 	margin-top: -20px;
