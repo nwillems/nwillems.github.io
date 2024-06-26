@@ -6,38 +6,166 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<div class="grid-container">
+		<div class="left">&nbsp;</div>
 
-  <!-- https://jamesrwilliams.ca/posts/css-wheel-of-fortune -->
-<div class="container">
-	<div class="board">
-		<div class="spinner-table"> 
-			<div class="dial">
-				<div class="slice"><div class="label">1</div></div>
-				<div class="slice"><div class="label">2</div></div>
-				<div class="slice"><div class="label">3</div></div>
-				<div class="slice"><div class="label">4</div></div>
-				<div class="slice"><div class="label">5</div></div>
-				<div class="slice"><div class="label">6</div></div>
-				<div class="slice"><div class="label">7</div></div>
-				<div class="slice"><div class="label">8</div></div>
-				<div class="slice"><div class="label">9</div></div>
-				<div class="slice"><div class="label">10</div></div>
-				<div class="slice"><div class="label">11</div></div>
-				<div class="slice"><div class="label">12</div></div>
+		<div class="main-board">
+
+  
+		<div class="main-column">
+			<div class="board">
+				<div class="spinner-table"> 
+					<div class="dial" id="dial">
+						<!-- https://jamesrwilliams.ca/posts/css-wheel-of-fortune -->
+						<div class="slice"><div class="label">1</div></div>
+						<div class="slice"><div class="label">2</div></div>
+						<div class="slice"><div class="label">3</div></div>
+						<div class="slice"><div class="label">4</div></div>
+						<div class="slice"><div class="label">5</div></div>
+						<div class="slice"><div class="label">6</div></div>
+						<div class="slice"><div class="label">7</div></div>
+						<div class="slice"><div class="label">8</div></div>
+						<div class="slice"><div class="label">.</div></div>
+						<!-- <div class="slice"><div class="label">10</div></div>
+						<div class="slice"><div class="label">11</div></div> -->
+						<div class="slice">
+							<div class="label" style="background-image: url(https://ca.slack-edge.com/T043Z9B4Y-U1BJR88QY-g585ccf9bad8-72);">
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="arrow">
+					<span class="pointer"></span>
+				</div>
+			</div>
+			
+			<div class="content-container">
+				<div class="pre">
+					<button id="spin">Spin</button>
+				</div>
 			</div>
 		</div>
-  
-		<div class="arrow">
-			<span class="pointer"></span>
-		</div>
 	</div>
-	
-	<div class="content-container">
-		<div class="pre">
-			<button id="spin">Spin</button>
+
+	<div class="candle">
+		<div class="flame">
+			<div class="outer"></div>
+			<!--<div class="inner"></div> -->
 		</div>
+		<ol clas="advent-calendar">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
 	</div>
 </div>
+<script>
 
+const spinButton = document.querySelector("#spin"),
+			dial = document.querySelector("#dial");
+
+const numberParticipants = 12;
+const participants = [
+	{ "name": "This Guy", "picture": "https://your-smart-picture-here-possibly-72px" }
+];
+
+function numSlices(data){
+	if (data.length % 2 === 1) {
+		return data.length + 1;
+	}
+
+	return data.length;
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function initializeDial(dial, data){
+	function mkSlice(participant){
+		const slice = document.createElement("div");
+		slice.classList.add("slice");
+		const label = document.createElement("div");
+		label.classList.add("label");
+
+		if (participant.picture) {
+			label.style.backgroundImage = `url(${participant.picture})`;
+		} else {
+			label.innerHTML = participant.name;
+		}
+
+		slice.appendChild(label);
+
+		return slice;
+	}
+
+	// Set the number of slices - side effect
+	const numberOfSlices = numSlices(data);
+	document.documentElement.style.setProperty("--numberOfSlices",numberOfSlices);
+
+	// Create slices from data
+	const slices = data.map(mkSlice);
+	// Remove all old slices from dial
+	dial.querySelectorAll(".slice").forEach((slice) => slice.remove());
+	// Add new slices to dial
+	const fragment = document.createDocumentFragment();
+	slices.forEach((slice) => fragment.appendChild(slice));
+	if (numSlices(data) !== data.length) {
+		fragment.appendChild(mkSlice({"picture": "https://picsum.photos/72"}));
+	}
+	dial.appendChild(fragment);
+}
+
+function spinClickHandler(data){
+	const numberParticipants = data.length;
+
+	return function(){
+		// Pick random number
+		const winner = Math.floor( Math.random() * (numberParticipants ) )
+
+		// Set css spin variable to appropriate
+		document.documentElement.style.setProperty("--spinOffset", winner);
+		// Toggle spin class
+		dial.classList.toggle("spinning");
+
+		setTimeout(() => {
+			dial.classList.toggle("spinning");
+		}, 10000);
+	}
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	shuffleArray(participants);
+	initializeDial(dial, participants);
+
+	spinButton.addEventListener('click', spinClickHandler(participants))
+});
+
+</script>
 </body>
 </html>

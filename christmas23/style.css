@@ -1,6 +1,6 @@
 :root {
 --diameter: 350px;
---numberOfSlices: 12;
+--numberOfSlices: 10;
 --radius: calc(var(--diameter) / 2);
 --circumfrence: calc(6.283185307 * var(--radius));
 --sliceHeight: calc(var(--circumfrence) / var(--numberOfSlices));
@@ -8,6 +8,8 @@
 --sliceColor: #5d815b;
 --sliceColorDark: #953332;
 --rotation: calc(360deg / var(--numberOfSlices));
+
+--spinOffset: 3;
 
 --ext1: #bda686; /* crumb cake */
 --ext2: #896f4e; /* soft suede */
@@ -17,14 +19,77 @@
 
 body {
 	font-family: sans-serif;
-	margin: 0;
+	margin: 1vh 0;
 	background: #Fff;
 }
 
-.container {
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-column-gap: 10px;
+}
+
+.left {
+  grid-column: 1 / span 1;
+}
+
+.candle {
+  grid-column: 3 / span 1;
+  height: 100vh;
+}
+
+.candle ol {
+  background: url(https://static.vecteezy.com/system/resources/previews/000/701/152/original/seamless-nordic-christmas-pattern-vector.jpg);
+  background-size: 200px 100px;
+  background-repeat: repeat-y;
+
+  width: 25px;
+
+  color: var(--ext3);
+  font-weight: bolder;
+
+  margin: 0;
+}
+
+.candle .flame {
+  /* Contain the fire */
+  height: 7vh;
+  padding-left: 20px;
+}
+
+.candle .flame .outer {
+  width: 25px;
+  width: 1fr;
+  height: 8vh;
+  background: #ff6234;
+  border-radius: 0 75% 75% 75%;
+  transform: rotate(45deg);
+  /*animation: candle-flame 2s linear infinite alternate;*/
+  animation-delay: 1s;
+}
+
+.candle .flame .inner {
+  width: 0.8fr;
+  background: #ff7d17;
+  border-radius: 0 75% 75% 75%;
+  transform: rotate(45deg);
+  animation: candle-flame 2s linear infinite alternate;
+  animation-delay: .5s;
+}
+
+@keyframes candle-flame {
+  0%   {opacity: 1; transform: scale(1) rotate(45deg)}
+  100% {opacity: .8; transform: scale(.9) rotate(45deg)}
+}
+
+.main-board {
+  grid-column: 2 / span 1;
+}
+
+.main-column {
 	position: relative;
 	max-width: 800px;
-	margin: 2rem auto;
+	/*margin: 2rem auto;*/
 }
 
 .spinner-table {
@@ -116,50 +181,63 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 70%;
+  width: calc(var(--sliceHeight) * 0.45);
+  height: calc(var(--sliceHeight) * 0.45);
   line-height: var(--sliceHeight);
-  padding-top: 1px;
-  padding-bottom: 1px;
   font-size: 16px;
   text-align: right;
-  padding-left: 20px;
+  margin: auto 0 auto 50%;
+
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: calc(var(--sliceHeight) * 0.45);
+  clip-path: circle();
+}
+
+.dial {
+  counter-reset: slice-count;
+}
+
+.dial .slice {
+  transform: rotate(calc(var(--rotation) * counter(slice-count)deg));
+  
 }
 
 .dial .slice:nth-child(1) {
-			transform: rotate(0deg);
+			transform: rotate(calc(0 * var(--rotation)));
 		}
 .dial .slice:nth-child(2) {
-			transform: rotate(30deg);
+  transform: rotate(calc(1 * var(--rotation)));
 		}
 .dial .slice:nth-child(3) {
-			transform: rotate(60deg);
+  transform: rotate(calc(2 * var(--rotation)));
 		}
 .dial .slice:nth-child(4) {
-			transform: rotate(90deg);
+  transform: rotate(calc(3 * var(--rotation)));
 		}
 .dial .slice:nth-child(5) {
-			transform: rotate(120deg);
+  transform: rotate(calc(4 * var(--rotation)));
 		}
 .dial .slice:nth-child(6) {
-			transform: rotate(150deg);
+  transform: rotate(calc(5 * var(--rotation)));
 		}
 .dial .slice:nth-child(7) {
-			transform: rotate(180deg);
+  transform: rotate(calc(6 * var(--rotation)));
 		}
 .dial .slice:nth-child(8) {
-			transform: rotate(210deg);
+  transform: rotate(calc(7 * var(--rotation)));
 		}
 .dial .slice:nth-child(9) {
-			transform: rotate(240deg);
+  transform: rotate(calc(8 * var(--rotation)));
 		}
 .dial .slice:nth-child(10) {
-			transform: rotate(270deg);
+  transform: rotate(calc(9 * var(--rotation)));
 		}
 .dial .slice:nth-child(11) {
-			transform: rotate(300deg);
+  transform: rotate(calc(10 * var(--rotation)));
 		}
 .dial .slice:nth-child(12) {
-			transform: rotate(330deg);
+  transform: rotate(calc(11 * var(--rotation)));
 		}
 
 @keyframes rotating {
@@ -169,7 +247,7 @@ body {
 
 @keyframes spinning {
 	 from { transform: rotate(0); }
-   to {  transform: rotate(330deg); }
+   to {  transform: rotate( calc( 1800deg + var(--rotation)*var(--spinOffset) ) ); }
 }
 
 .arrow {
