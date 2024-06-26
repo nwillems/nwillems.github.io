@@ -11,6 +11,7 @@ jobs:
   build:
     # <Not provided for brevity>
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
+    steps:
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact
       with:
