@@ -13,7 +13,7 @@ jobs:
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
     steps:
     - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact
+      uses: actions/upload-pages-artifact@v3
       with:
         name: github-pages
         path: ./
