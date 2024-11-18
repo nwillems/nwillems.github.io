@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+  <link rel="stylesheet" href="/reset.css" />
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="stylesheet" href="/monospace-add.css" />
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">{{title}}</h1>
+      <span class="subtitle">{{subtitle}}</span>
+    </td>
+    <th>Version</th>
+    <td class="width-min">{{version}}</td>
+  </tr>
+  <tr>
+    <th>Updated</th>
+    <td class="width-min"><time style="white-space: pre;">{{date.toLocaleDateString("se")}}</time></td>
+  </tr>
+  <tr>
+    <th class="width-min">Author</th>
+    <td class="width-auto"><a href="{{author-url}}"><cite>{{author}}</cite></a></td>
+    <th class="width-min">License</th>
+    <td>MIT</td>
+  </tr>
+</table>
+<label class="debug-toggle-label"><input type="checkbox" class="debug-toggle" /> Debug mode</label>
+{%if abstract %}
+  <div class="abstract">
+  <div class="abstract-title">{{abstract-title}}</div>
+  {{abstract}}
+  </div>
+{%endif%}
+{% if content | toc %}
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+{{ content | toc | safe }}
+</nav>
+{% endif %}
+
+  {{ content | safe }}
+</body>
+</html>

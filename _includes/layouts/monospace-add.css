@@ -1,0 +1,10 @@
+
+pre:has(code) {
+  background-color: #333;
+  color: lightgray;
+
+  padding: 1ch 2ch;
+  border-radius: 0.4em;
+
+  
+}

@@ -1,4 +1,6 @@
 ---
+layout: base.njk
+
 title: Unifi UDMP Setup
 subtitle: Setup of the home UDMP
 author: Nicolai Willems

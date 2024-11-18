@@ -8,3 +8,7 @@ all: $(HTML_FILES)
 
 %.html: %.md monospace/template.html Makefile
 	pandoc --toc -s --css monospace/reset.css --css monospace/index.css --css monospace-add.css -i $< -o $@ --template=monospace/template.html
+
+.PHONY: build
+build:
+	npx @11ty/eleventy
