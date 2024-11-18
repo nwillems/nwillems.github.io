@@ -22,12 +22,12 @@ jobs:
         with:
           version: 2.19
       - name: Render Pages
-        run: make all
+        run: npx @11ty/eleventy
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: ./
+          path: ./_site
 
   # Deploy job
   deploy:
