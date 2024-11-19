@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: page
 
 title: Unifi UDMP Setup
 subtitle: Setup of the home UDMP

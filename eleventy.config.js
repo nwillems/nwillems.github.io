@@ -30,5 +30,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(
     { "_includes/layouts": "/" }
   );
+
+  eleventyConfig.addLayoutAlias("page", "base.njk");
 };
 
