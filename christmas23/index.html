@@ -50,13 +50,19 @@
 </div>
 <script>
 
+/*
+history:
+Simon choosen, defered to Ana, awarded to Kristian Mohr
+Krisztian chosen, awarded to Mathias
+
+*/
+
 const spinButton = document.querySelector("#spin"),
 			dial = document.querySelector("#dial");
 
 const numberParticipants = 12;
-const participants = [
-	{ "name": "This Guy", "picture": "https://your-smart-picture-here-possibly-72px" }
-];
+const participants = [];
+
 
 function numSlices(data){
 	if (data.length % 2 === 1) {
@@ -127,10 +133,15 @@ function spinClickHandler(data){
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
+	fetch('./people.json').then((resp)=> resp.json()).then((content)=>{
+	console.log(content)
+	participants.push(...content)
+}).then(() => {
 	shuffleArray(participants);
 	initializeDial(dial, participants);
 
 	spinButton.addEventListener('click', spinClickHandler(participants))
+});
 });
 
 </script>
