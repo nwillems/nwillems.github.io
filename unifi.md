@@ -41,6 +41,3 @@ Displayed  4 routes and 4 total paths
 
 2024-10-09 - MetalLB speaker had been in a bad state for multiple days - just needed a retsart. Opened K9s, and ctrl+k'ed them.
 
-### Thoughts
-
-Well, maybe the current setup is nice
