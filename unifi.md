@@ -43,4 +43,4 @@ Displayed  4 routes and 4 total paths
 
 ### Thoughts
 
-It would be nice, to be good enough to have the homelab on a separate VLAN, with its own VPN config and all that jazz.
+Well, maybe the current setup is nice
