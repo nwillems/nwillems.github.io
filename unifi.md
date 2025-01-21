@@ -11,6 +11,12 @@ toc-title: Contents
 version: v0.1.2
 ---
 
+# Unifi
+
+General setup of our home Unifi Setup.
+
+Consists of UDMP, USW24, and 2x 8 port Unifi PoE Switch, and 3 APs
+
 ## Unifi BGP Setup
 
 First step, ensure we are actually not reachable.
