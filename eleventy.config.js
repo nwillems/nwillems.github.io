@@ -1,13 +1,11 @@
 
 
 import pluginTOC from 'eleventy-plugin-toc'
-import markdownItAnchor from "markdown-it-anchor";
+import anchor from "markdown-it-anchor";
 
 export default function (eleventyConfig) {
   const mdAnchorOpts = {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#",
+    permalink: anchor.permalink.headerLink(),
     level: [1, 2, 3, 4],
   };
 
@@ -19,7 +17,7 @@ export default function (eleventyConfig) {
   }
 
   eleventyConfig.amendLibrary("md", (mdLib) => {
-    mdLib.use(markdownItAnchor, mdAnchorOpts)
+    mdLib.use(anchor, mdAnchorOpts)
     //mdLib.enable("code")
   });
 
