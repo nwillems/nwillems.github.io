@@ -36,7 +36,6 @@ RPKI validation codes: V valid, I invalid, N Not found
 Displayed  4 routes and 4 total paths
 
 ```
-
 ### Log of reasons for failure
 
 2024-10-09 - MetalLB speaker had been in a bad state for multiple days - just needed a retsart. Opened K9s, and ctrl+k'ed them.
