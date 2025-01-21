@@ -8,7 +8,7 @@ author-url: "https://nwillems.dk"
 date: 2024-08-26
 lang: en
 toc-title: Contents
-version: v0.1.1
+version: v0.1.2
 ---
 
 ## Unifi BGP Setup
