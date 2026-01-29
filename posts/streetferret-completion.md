@@ -1,3 +1,11 @@
+---
+layout: base
+tags: post
+
+title: StreetFerret
+date: 2026-01-29
+---
+
 # Street Ferret
 
 In 2025 I discovered streetferret.com - lovely idea.
